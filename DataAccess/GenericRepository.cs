@@ -321,16 +321,16 @@ namespace DataAccess
                              .Distinct();
             }
 
-            // Filter by bedroom count
+            // Filter by bedroom count 
             if (bedroomCount.HasValue)
             {
-                query = query.Where(p => p.BedroomNum == bedroomCount);
+                query = query.Where(p => p.BedroomNum >= bedroomCount);
             }
 
             // Filter by bathroom count
             if (bathroomCount.HasValue)
             {
-                query = query.Where(p => p.BathroomNum == bathroomCount);
+                query = query.Where(p => p.BathroomNum >= bathroomCount);
             }
 
             // Execute the query and return the results
